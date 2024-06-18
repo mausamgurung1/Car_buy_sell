@@ -1,3 +1,10 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import \
+    Listing  # Assuming models.py is in the same directory as admin.py
+
+
+class ListingAdmin(admin.ModelAdmin):
+    pass  # Customize this class as needed
+
+admin.site.register(Listing, ListingAdmin)

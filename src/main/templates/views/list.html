@@ -16,10 +16,10 @@
             {% csrf_token %}
             <div class="row">
                 <div class="col-6">
-                    {{listing_form|crispy}}
+                    {{listing_form}}
                 </div>
                 <div class="col-6">
-                    {{location_form|crispy}}
+                    {{location_form}}
                 </div>
             </div>
             <button class="btn btn-lg btn-danger" type="submit">Save</button>

@@ -57,19 +57,22 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'automax.urls'
 
-
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates')],
-        'APP_DIRS': True,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # Add your template directory here
+        'APP_DIRS': False, # Add your
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+            ],
+            # Add the loaders configuration here
+            'loaders': [
+                'django.template.loaders.filesystem.Loader',  # Load templates from filesystem
+                'django.template.loaders.app_directories.Loader',  # Load templates from app directories
             ],
         },
     },
